@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: appli
+spec:
+  ports:
+    - nodePort: 31288
+      port: 8080
+      protocol: TCP
+      targetPort: 5000
+  selector:
+    app: appli
+  type: NodePort
+  

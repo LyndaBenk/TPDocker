@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appli
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appli
+  template:
+    metadata:
+      labels:
+        app: appli
+    spec:
+      containers:
+        - image: lyly8588/appli:1
+          imagePullPolicy: IfNotPresent
+          name: appli
+      restartPolicy: Always
